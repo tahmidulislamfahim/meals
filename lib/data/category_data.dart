@@ -61,7 +61,7 @@ final meals = [
     categories: ['c1', 'c2'],
     title: 'Spaghetti with Tomato Sauce',
     imageUrl:
-        'https://www.example.com/spaghetti.jpg',
+        'https://media.istockphoto.com/id/637214478/photo/pasta-plate.jpg?s=2048x2048&w=is&k=20&c=KcFGAXbHoJgsBhSjfuln9We9x_Ylltkln2aq35DW7nQ=',
     ingredients: [
       'Spaghetti',
       'Tomato Sauce',
@@ -88,7 +88,7 @@ final meals = [
     categories: ['c2', 'c3'],
     title: 'Classic Hamburger',
     imageUrl:
-        'https://www.example.com/hamburger.jpg',
+        'https://media.istockphoto.com/id/155352091/photo/plain-hamburger.jpg?s=2048x2048&w=is&k=20&c=bxMYm3lbZXjAma-FiqUJHPtWeFHjFgZDgRmmmQoPrzM=',
     ingredients: [
       'Ground Beef',
       'Burger Buns',
@@ -116,7 +116,7 @@ final meals = [
     categories: ['c5'],
     title: 'Avocado Salad',
     imageUrl:
-        'https://www.example.com/avocado_salad.jpg',
+        'https://media.istockphoto.com/id/1469228227/photo/fresh-salad-of-lentils-spinach-and-almonds.jpg?s=2048x2048&w=is&k=20&c=92NVqCfKhM6hcnMaG-PLyxRLAyTqBgX7cVGGCbgZIj4=',
     ingredients: [
       'Avocado',
       'Lettuce',
@@ -142,7 +142,8 @@ final meals = [
     id: 'm4',
     categories: ['c6', 'c8'],
     title: 'Sushi Rolls',
-    imageUrl: 'https://www.example.com/sushi.jpg',
+    imageUrl:
+        'https://media.istockphoto.com/id/1320922361/photo/woman-taking-tasty-sushi-roll-with-salmon-from-set-at-table-closeup.jpg?s=1024x1024&w=is&k=20&c=NJvRHijQDEvCMjX3Tr7HgW3gjjZ6hWvYLCli4U27Y_E=',
     ingredients: [
       'Sushi Rice',
       'Nori Sheets',
@@ -169,7 +170,7 @@ final meals = [
     categories: ['c7'],
     title: 'Pancakes',
     imageUrl:
-        'https://www.example.com/pancakes.jpg',
+        'https://media.istockphoto.com/id/161170090/photo/pancakes-with-berries-and-maple-syrup.jpg?s=2048x2048&w=is&k=20&c=5QhxXiWQTgsFhiZsHfJf_LJ4n7vIOxoEmfk8yEiLMR0=',
     ingredients: [
       'Flour',
       'Milk',
@@ -197,7 +198,7 @@ final meals = [
     categories: ['c9'],
     title: 'French Toast',
     imageUrl:
-        'https://www.example.com/french_toast.jpg',
+        'https://media.istockphoto.com/id/1397872499/photo/french-toast-with-honey-and-berries.jpg?s=2048x2048&w=is&k=20&c=fmFNMFZ-8Kx8vXnWIUrIShQdArbbn01rJkE5N1JhaLQ=',
     ingredients: [
       'Bread',
       'Eggs',
@@ -225,7 +226,7 @@ final meals = [
     categories: ['c10'],
     title: 'Grilled Chicken Salad',
     imageUrl:
-        'https://www.example.com/grilled_chicken_salad.jpg',
+        'https://media.istockphoto.com/id/928823336/photo/grilled-chicken-breast-fried-chicken-fillet-and-fresh-vegetable-salad-of-tomatoes-cucumbers.jpg?s=2048x2048&w=is&k=20&c=Wz1ycIM7noo-8OnLsAjutdRBznnwZoPN7jiDhaau_Bw=',
     ingredients: [
       'Chicken Breast',
       'Mixed Greens',
