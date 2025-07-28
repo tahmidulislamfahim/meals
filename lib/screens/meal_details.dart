@@ -3,18 +3,36 @@ import 'package:meals/models/meal.dart';
 
 class MealDetails extends StatelessWidget {
   final Meal meal;
+  final void Function(Meal meal) onToggleFavorite;
 
   const MealDetails({
     super.key,
     required this.meal,
+    required this.onToggleFavorite,
   });
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(meal.title),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.star),
+            onPressed: () {
+              onToggleFavorite(meal);
+              ScaffoldMessenger.of(
+                context,
+              ).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    '${meal.title} added to favorites!',
+                  ),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -29,7 +47,7 @@ class MealDetails extends StatelessWidget {
                     BoxShadow(
                       color: Colors.black26,
                       blurRadius: 10.0,
-                      offset: Offset(0, 5),
+                      offset: const Offset(0, 5),
                     ),
                   ],
                 ),
@@ -191,7 +209,7 @@ class MealDetails extends StatelessWidget {
                     ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
           ],
         ),
       ),
