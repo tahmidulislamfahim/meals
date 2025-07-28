@@ -1,35 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:meals/data/category_data.dart';
+
 import 'package:meals/models/category.dart';
-import 'package:meals/screans/meals.dart';
 
 class CategoryGridItem extends StatelessWidget {
   const CategoryGridItem({
     super.key,
     required this.category,
+    required this.onSelectCategory,
   });
   final Category category;
+  final void Function() onSelectCategory;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        final filteredMeals = meals
-            .where(
-              (meal) => meal.categories.contains(
-                category.id,
-              ),
-            )
-            .toList();
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => MealsScreen(
-              title: category.title,
-              meals:
-                  filteredMeals, // Replace with actual meals for the category
-            ),
-          ),
-        );
-      },
+      onTap: onSelectCategory,
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(15),
       child: Container(
