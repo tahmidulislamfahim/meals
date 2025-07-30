@@ -17,9 +17,9 @@ class App extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(
             seedColor: const Color.fromARGB(
               255,
-              131,
-              57,
-              0,
+              2,
+              219,
+              235,
             ),
             brightness: brightness,
           ),
