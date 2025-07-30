@@ -41,7 +41,17 @@ class MealsScreen extends StatelessWidget {
       return Scaffold(
         appBar: title != null
             ? AppBar(
-                title: Text(title!),
+                title: Text(
+                  title!,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge
+                      ?.copyWith(
+                        color: Theme.of(
+                          context,
+                        ).colorScheme.primary,
+                      ),
+                ),
                 centerTitle: true,
               )
             : null,
@@ -66,7 +76,18 @@ class MealsScreen extends StatelessWidget {
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text(title!),
+        title: Text(
+          title!,
+          style: Theme.of(context)
+              .textTheme
+              .titleLarge
+              ?.copyWith(
+                color: Theme.of(
+                  context,
+                ).colorScheme.primary,
+                fontWeight: FontWeight.bold,
+              ),
+        ),
         centerTitle: true,
       ),
       body: content,

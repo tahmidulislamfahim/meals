@@ -15,7 +15,17 @@ class MealDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(meal.title),
+        title: Text(
+          meal.title,
+          style: Theme.of(context)
+              .textTheme
+              .titleLarge
+              ?.copyWith(
+                color: Theme.of(
+                  context,
+                ).colorScheme.primary,
+              ),
+        ),
         centerTitle: true,
         actions: [
           IconButton(
