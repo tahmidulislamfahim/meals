@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:meals/models/meal.dart';
+import 'package:meals/providers/favourites_provider.dart';
 
-class MealDetails extends StatelessWidget {
-  final Meal meal;
-  final void Function(Meal) onToggleFavorite;
-
+class MealDetails extends ConsumerWidget {
   const MealDetails({
     super.key,
     required this.meal,
-    required this.onToggleFavorite,
   });
 
+  final Meal meal;
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final favoriteMeals =
+        ref.watch(favoriteMealsProvider).contains(meal);
+    
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -29,9 +32,40 @@ class MealDetails extends StatelessWidget {
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(Icons.favorite),
+            icon: Icon(favoriteMeals ?  Icons.favorite : Icons.favorite_border),
             onPressed: () {
-              onToggleFavorite(meal);
+              final wasAdded = ref
+                  .read(favoriteMealsProvider.notifier)
+                  .toggleFavorite(meal);
+                  showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(
+          'Warning',
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+            color: Theme.of(context).colorScheme.primary,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+
+        content: Text(
+          wasAdded
+              ? 'Meal added to favorites!'
+              : 'Meal removed from favorites!',
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+            color: Theme.of(context).colorScheme.onSurface,
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
             },
           ),
         ],
