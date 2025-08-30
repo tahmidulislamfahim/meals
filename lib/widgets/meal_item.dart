@@ -24,49 +24,44 @@ class MealItem extends StatelessWidget {
         onTap: () => onSelectMeal(meal),
         child: Stack(
           children: [
-            FadeInImage(
-              placeholder: MemoryImage(
-                kTransparentImage,
+            Hero(
+              tag: meal.id,
+              child: FadeInImage(
+                placeholder: MemoryImage(kTransparentImage),
+                image: NetworkImage(meal.imageUrl),
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: 250,
               ),
-              image: NetworkImage(meal.imageUrl),
-              fit: BoxFit.cover,
-              width: double.infinity,
-              height: 250,
             ),
             Positioned(
               bottom: 20,
               left: 10,
               right: 10,
               child: ClipRRect(
-                borderRadius:
-                    BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(15),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.black54,
-                    borderRadius:
-                        BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                   width: 300,
-                  padding:
-                      const EdgeInsets.symmetric(
-                        vertical: 10,
-                        horizontal: 20,
-                      ),
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 10,
+                    horizontal: 20,
+                  ),
                   child: Column(
                     children: [
                       Text(
                         meal.title,
                         maxLines: 2,
-                        textAlign:
-                            TextAlign.center,
+                        textAlign: TextAlign.center,
                         style: const TextStyle(
                           fontSize: 20,
                           color: Colors.white,
-                          fontWeight:
-                              FontWeight.bold,
+                          fontWeight: FontWeight.bold,
                         ),
-                        overflow:
-                            TextOverflow.ellipsis,
+                        overflow: TextOverflow.ellipsis,
                         softWrap: false,
                       ),
                       const SizedBox(height: 5),
